@@ -13,6 +13,8 @@ import tailwind from '~/styles/tailwind.css'
 import fonts from '~/styles/fonts.css'
 import styles from '~/styles/styles.css'
 
+import Header from '~/components/Header'
+
 export const meta: MetaFunction = () => {
   return { title: 'F1 Champs' }
 }
@@ -36,7 +38,12 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <main className="h-full flex justify-center items-center">
+          <article className="game relative h-full flex flex-col max-w-md text-center container mx-auto pt-8 px-8 bg-white shadow-lg">
+            <Header />
+            <Outlet />
+          </article>
+        </main>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

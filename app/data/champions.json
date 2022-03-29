@@ -1,218 +1,290 @@
 {
   "1950": {
-    "name": "Giuseppe Farina"
+    "name": "Giuseppe Farina",
+    "constructor": "Alfa Romeo"
   },
   "1951": {
-    "name": "Manuel Fangio"
+    "name": "Juan Manuel Fangio",
+    "constructor": "Alfa Romeo"
   },
   "1952": {
-    "name": "Alberto Ascari"
+    "name": "Alberto Ascari",
+    "constructor": "Ferrari"
   },
   "1953": {
-    "name": "Alberto Ascari"
+    "name": "Alberto Ascari",
+    "constructor": "Ferrari"
   },
   "1954": {
-    "name": "Manuel Fangio"
+    "name": "Juan Manuel Fangio",
+    "constructor": "Maserati"
   },
   "1955": {
-    "name": "Manuel Fangio"
+    "name": "Juan Manuel Fangio",
+    "constructor": "Mercedes"
   },
   "1956": {
-    "name": "Manuel Fangio"
+    "name": "Juan Manuel Fangio",
+    "constructor": "Ferrari"
   },
   "1957": {
-    "name": "Manuel Fangio"
+    "name": "Juan Manuel Fangio",
+    "constructor": "Maserati"
   },
   "1958": {
-    "name": "Mike Hawthorn"
+    "name": "Mike Hawthorn",
+    "constructor": "Ferrari"
   },
   "1959": {
-    "name": "Jack Brabham"
+    "name": "Jack Brabham",
+    "constructor": "Cooper"
   },
   "1960": {
-    "name": "Jack Brabham"
+    "name": "Jack Brabham",
+    "constructor": "Cooper"
   },
   "1961": {
-    "name": "Phil Hill"
+    "name": "States Phil Hill",
+    "constructor": "Ferrari"
   },
   "1962": {
-    "name": "Graham Hill"
+    "name": "Graham Hill",
+    "constructor": "BRM"
   },
   "1963": {
-    "name": "Jim Clark"
+    "name": "Jim Clark",
+    "constructor": "Lotus"
   },
   "1964": {
-    "name": "John Surtees"
+    "name": "John Surtees",
+    "constructor": "Ferrari"
   },
   "1965": {
-    "name": "Jim Clark"
+    "name": "Jim Clark",
+    "constructor": "Lotus"
   },
   "1966": {
-    "name": "Jack Brabham"
+    "name": "Jack Brabham",
+    "constructor": "Brabham"
   },
   "1967": {
-    "name": "Denny Hulme"
+    "name": "Zealand Denny Hulme",
+    "constructor": "Brabham"
   },
   "1968": {
-    "name": "Graham Hill"
+    "name": "Graham Hill",
+    "constructor": "Lotus"
   },
   "1969": {
-    "name": "Jackie Stewart"
+    "name": "Jackie Stewart",
+    "constructor": "Matra"
   },
   "1970": {
-    "name": "Jochen Rindt"
+    "name": "Jochen Rindt",
+    "constructor": "Lotus"
   },
   "1971": {
-    "name": "Jackie Stewart"
+    "name": "Jackie Stewart",
+    "constructor": "Tyrrell"
   },
   "1972": {
-    "name": "Emerson Fittipaldi"
+    "name": "Emerson Fittipaldi",
+    "constructor": "Lotus"
   },
   "1973": {
-    "name": "Jackie Stewart"
+    "name": "Jackie Stewart",
+    "constructor": "Tyrrell"
   },
   "1974": {
-    "name": "Emerson Fittipaldi"
+    "name": "Emerson Fittipaldi",
+    "constructor": "McLaren"
   },
   "1975": {
-    "name": "Niki Lauda"
+    "name": "Niki Lauda",
+    "constructor": "Ferrari"
   },
   "1976": {
-    "name": "James Hunt"
+    "name": "James Hunt",
+    "constructor": "McLaren"
   },
   "1977": {
-    "name": "Niki Lauda"
+    "name": "Niki Lauda",
+    "constructor": "Ferrari"
   },
   "1978": {
-    "name": "Mario Andretti"
+    "name": "Mario Andretti",
+    "constructor": "Lotus"
   },
   "1979": {
-    "name": "Jody Scheckter"
+    "name": "Jody Scheckter",
+    "constructor": "Ferrari"
   },
   "1980": {
-    "name": "Alan Jones"
+    "name": "Alan Jones",
+    "constructor": "Williams"
   },
   "1981": {
-    "name": "Nelson Piquet"
+    "name": "Nelson Piquet",
+    "constructor": "Brabham"
   },
   "1982": {
-    "name": "Keke Rosberg"
+    "name": "Keke Rosberg",
+    "constructor": "Williams"
   },
   "1983": {
-    "name": "Nelson Piquet"
+    "name": "Nelson Piquet",
+    "constructor": "Brabham"
   },
   "1984": {
-    "name": "Niki Lauda"
+    "name": "Niki Lauda",
+    "constructor": "McLaren"
   },
   "1985": {
-    "name": "Alain Prost"
+    "name": "Alain Prost",
+    "constructor": "McLaren"
   },
   "1986": {
-    "name": "Alain Prost"
+    "name": "Alain Prost",
+    "constructor": "McLaren"
   },
   "1987": {
-    "name": "Nelson Piquet"
+    "name": "Nelson Piquet",
+    "constructor": "Williams"
   },
   "1988": {
-    "name": "Ayrton Senna"
+    "name": "Ayrton Senna",
+    "constructor": "McLaren"
   },
   "1989": {
-    "name": "Alain Prost"
+    "name": "Alain Prost",
+    "constructor": "McLaren"
   },
   "1990": {
-    "name": "Ayrton Senna"
+    "name": "Ayrton Senna",
+    "constructor": "McLaren"
   },
   "1991": {
-    "name": "Ayrton Senna"
+    "name": "Ayrton Senna",
+    "constructor": "McLaren"
   },
   "1992": {
-    "name": "Nigel Mansell"
+    "name": "Nigel Mansell",
+    "constructor": "Williams"
   },
   "1993": {
-    "name": "Alain Prost"
+    "name": "Alain Prost",
+    "constructor": "Williams"
   },
   "1994": {
-    "name": "Michael Schumacher"
+    "name": "Michael Schumacher",
+    "constructor": "Benetton"
   },
   "1995": {
-    "name": "Michael Schumacher"
+    "name": "Michael Schumacher",
+    "constructor": "Benetton"
   },
   "1996": {
-    "name": "Damon Hill"
+    "name": "Damon Hill",
+    "constructor": "Williams"
   },
   "1997": {
-    "name": "Jacques Villeneuve"
+    "name": "Jacques Villeneuve",
+    "constructor": "Williams"
   },
   "1998": {
-    "name": "Mika Häkkinen"
+    "name": "Mika Häkkinen",
+    "constructor": "McLaren"
   },
   "1999": {
-    "name": "Mika Häkkinen"
+    "name": "Mika Häkkinen",
+    "constructor": "McLaren"
   },
   "2000": {
-    "name": "Michael Schumacher"
+    "name": "Michael Schumacher",
+    "constructor": "Ferrari"
   },
   "2001": {
-    "name": "Michael Schumacher"
+    "name": "Michael Schumacher",
+    "constructor": "Ferrari"
   },
   "2002": {
-    "name": "Michael Schumacher"
+    "name": "Michael Schumacher",
+    "constructor": "Ferrari"
   },
   "2003": {
-    "name": "Michael Schumacher"
+    "name": "Michael Schumacher",
+    "constructor": "Ferrari"
   },
   "2004": {
-    "name": "Michael Schumacher"
+    "name": "Michael Schumacher",
+    "constructor": "Ferrari"
   },
   "2005": {
-    "name": "Fernando Alonso"
+    "name": "Fernando Alonso",
+    "constructor": "Renault"
   },
   "2006": {
-    "name": "Fernando Alonso"
+    "name": "Fernando Alonso",
+    "constructor": "Renault"
   },
   "2007": {
-    "name": "Kimi Räikkönen"
+    "name": "Kimi Räikkönen",
+    "constructor": "Ferrari"
   },
   "2008": {
-    "name": "Lewis Hamilton"
+    "name": "Lewis Hamilton",
+    "constructor": "McLaren"
   },
   "2009": {
-    "name": "Jenson Button"
+    "name": "Jenson Button",
+    "constructor": "Brawn"
   },
   "2010": {
-    "name": "Sebastian Vettel"
+    "name": "Sebastian Vettel",
+    "constructor": "Red Bull"
   },
   "2011": {
-    "name": "Sebastian Vettel"
+    "name": "Sebastian Vettel",
+    "constructor": "Red Bull"
   },
   "2012": {
-    "name": "Sebastian Vettel"
+    "name": "Sebastian Vettel",
+    "constructor": "Red Bull"
   },
   "2013": {
-    "name": "Sebastian Vettel"
+    "name": "Sebastian Vettel",
+    "constructor": "Red Bull"
   },
   "2014": {
-    "name": "Lewis Hamilton"
+    "name": "Lewis Hamilton",
+    "constructor": "Mercedes"
   },
   "2015": {
-    "name": "Lewis Hamilton"
+    "name": "Lewis Hamilton",
+    "constructor": "Mercedes"
   },
   "2016": {
-    "name": "Nico Rosberg"
+    "name": "Nico Rosberg",
+    "constructor": "Mercedes"
   },
   "2017": {
-    "name": "Lewis Hamilton"
+    "name": "Lewis Hamilton",
+    "constructor": "Mercedes"
   },
   "2018": {
-    "name": "Lewis Hamilton"
+    "name": "Lewis Hamilton",
+    "constructor": "Mercedes"
   },
   "2019": {
-    "name": "Lewis Hamilton"
+    "name": "Lewis Hamilton",
+    "constructor": "Mercedes"
   },
   "2020": {
-    "name": "Lewis Hamilton"
+    "name": "Lewis Hamilton",
+    "constructor": "Mercedes"
   },
   "2021": {
-    "name": "Max Verstappen"
+    "name": "Max Verstappen",
+    "constructor": "Red Bull"
   }
 }

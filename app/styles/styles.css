@@ -3,3 +3,13 @@ body {
   background-color: hsl(0, 0%, 98%);
   color: hsl(0, 0%, 2%);
 }
+
+html,
+body {
+  height: 100%;
+}
+
+main .game {
+  max-height: 850px;
+  border-radius: 6px;
+}
