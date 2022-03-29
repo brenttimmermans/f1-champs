@@ -1,9 +1,5 @@
-import { Link } from 'remix'
+import Start from '~/components/Start'
 
 export default function Index() {
-  return (
-    <section>
-      <Link to="/game">To the game</Link>
-    </section>
-  )
+  return <Start />
 }
