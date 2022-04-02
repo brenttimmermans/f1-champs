@@ -1,8 +1,9 @@
 {
   "name": "f1-champs",
-  "private": true,
-  "description": "",
-  "license": "",
+  "version": "0.1.0",
+  "description": "Are you a true Formula 1 champion?",
+  "author": "Brent-T <brenttimmermans7@gmail.com>",
+  "license": "ISC",
   "sideEffects": false,
   "scripts": {
     "build": "npm run build:css && npm run build:remix",

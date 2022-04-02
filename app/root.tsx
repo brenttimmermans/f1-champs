@@ -34,6 +34,21 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+        <meta name="description" content="Are you a true Formula 1 champion?" />
+        <meta property="og:title" content="F1 Champs" />
+        <meta
+          property="og:description"
+          content="Are you a true Formula 1 champion?"
+        />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://f1-champs.brenttimmermans.com"
+        />
+        <meta name="theme-color" content="##EF4444" />
+
         <Meta />
         <Links />
       </head>
