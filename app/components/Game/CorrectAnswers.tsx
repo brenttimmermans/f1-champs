@@ -10,7 +10,7 @@ export default function CorrectAnswers({
   hasGameEnded: boolean
 }) {
   return (
-    <ul className="flex flex-col-reverse grow overflow-y-auto border-t-2 border-slate-200">
+    <ul className="flex flex-col-reverse grow basis-12 overflow-y-auto">
       {!hasGameEnded && (
         <CorrectAnswerItem
           key={currentYear}
