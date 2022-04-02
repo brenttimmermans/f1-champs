@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="space-y-3 mb-6">
+    <header className="space-y-3 pb-4 mb-2 border-b-2 border-slate-200">
       <h1 className="text-3xl uppercase">
         🏎 F1 Champs <span className="inline-block scale-x-[-1]">🏎</span>
       </h1>
