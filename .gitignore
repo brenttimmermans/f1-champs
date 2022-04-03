@@ -1,8 +1,10 @@
 node_modules
-
 /.cache
 /api
 /build
 /public/build
 .env
 .DS_Store
+
+# tailwind
+*/**/tailwind.css
