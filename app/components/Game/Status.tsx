@@ -25,5 +25,5 @@ export default function Status({
     text = '🏁 Chequered flag, P1 🏁'
   }
 
-  return <p>{text}</p>
+  return <p className="status">{text}</p>
 }
