@@ -17,6 +17,7 @@ import CorrectAnswers from '~/components/Game/CorrectAnswers'
 import Lives from '~/components/Game/Lives'
 import Status from '~/components/Game/Status'
 import { END_YEAR, NUMBER_OF_LIVES, START_YEAR } from '~/config'
+import { determineGameState } from '~/lib/game-state'
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData()
@@ -77,6 +78,8 @@ export default function Game() {
   const transition = useTransition()
   const isSubmitting = transition.state === 'submitting'
 
+  const state = determineGameState({ wasCorrect, isGameOver, hasGameEnded })
+
   const inputRef = useRef<HTMLInputElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
 
@@ -102,11 +105,7 @@ export default function Game() {
         />
         <div className="controls">
           <Lives lives={lives} />
-          <Status
-            wasCorrect={wasCorrect}
-            isGameOver={isGameOver}
-            hasGameEnded={hasGameEnded}
-          />
+          <Status state={state} />
           <Form method="post" ref={formRef} className="space-y-3">
             <p className="text-left">
               <label htmlFor="guess" className="label">
