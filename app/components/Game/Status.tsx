@@ -1,29 +1,23 @@
-export default function Status({
-  wasCorrect,
-  isGameOver,
-  hasGameEnded,
-}: {
-  wasCorrect: boolean | undefined
-  isGameOver: boolean | undefined
-  hasGameEnded: boolean | undefined
-}) {
-  let text = 'Go and guess something!'
+import { GameState } from '~/types'
 
-  if (wasCorrect) {
-    text = '✅ Correct! On to the next one!'
-  }
-
-  if (wasCorrect === false) {
-    text = "❌ That's not the one"
-  }
-
-  if (isGameOver) {
-    text = "🏁 Game over, you'll do better next time 🏁"
-  }
-
-  if (hasGameEnded) {
-    text = '🏁 Chequered flag, P1 🏁'
-  }
-
+export default function Status({ state }: { state: GameState }) {
+  const text = getStatusText(state)
   return <p className="status">{text}</p>
+}
+
+function getStatusText(state: GameState): string {
+  switch (state) {
+    case GameState.GameStart:
+      return 'Go and guess something!'
+    case GameState.CorrectAnswer:
+      return '✅ Correct! On to the next one!'
+    case GameState.WrongAnswer:
+      return "❌ That's not the one"
+    case GameState.GameOver:
+      return "🏁 Game over, you'll do better next time 🏁"
+    case GameState.GameEnded:
+      return '🏁 Chequered flag, P1 🏁'
+    default:
+      return '---'
+  }
 }
