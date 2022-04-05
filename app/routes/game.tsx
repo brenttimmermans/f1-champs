@@ -89,18 +89,18 @@ export default function Game() {
 
   return (
     <>
-      <div className="absolute top-0 right-0 text-2xl">
+      <div className="close">
         <Link className="block px-8 py-5" to="/">
           &times;
         </Link>
       </div>
-      <div className="space-y-6 flex flex-col grow">
+      <div className="flex flex-col grow space-y-6 ">
         <CorrectAnswers
           answers={correctAnswers}
           currentYear={currentYear}
           hasGameEnded={hasGameEnded}
         />
-        <div className="shadow-inner bg-zinc-100 -mx-8 px-8 pt-4 pb-8 space-y-2">
+        <div className="controls">
           <Lives lives={lives} />
           <Status
             wasCorrect={wasCorrect}
@@ -109,7 +109,7 @@ export default function Game() {
           />
           <Form method="post" ref={formRef} className="space-y-3">
             <p className="text-left">
-              <label htmlFor="guess" className="text-sm text-slate-500">
+              <label htmlFor="guess" className="label">
                 Your guess:
               </label>
               <input
@@ -122,7 +122,7 @@ export default function Game() {
                 autoFocus
                 required
                 ref={inputRef}
-                className="placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm mt-1"
+                className="input"
               />
               <datalist id="guess-options">
                 {driverOptions.map(driver => (
@@ -130,30 +130,25 @@ export default function Game() {
                 ))}
               </datalist>
             </p>
-            <input
-              type="number"
-              name="currentYear"
-              value={currentYear}
-              readOnly
-              style={{ display: 'none' }}
-            />
-            <input
-              type="number"
-              name="lives"
-              value={lives}
-              readOnly
-              style={{ display: 'none' }}
-            />
+            <p className="hidden">
+              <input
+                type="number"
+                name="currentYear"
+                value={currentYear}
+                readOnly
+              />
+              <input type="number" name="lives" value={lives} readOnly />
+            </p>
             <p>
               <button
-                className="bg-red-500 shadow shadow-red-500/50 hover:bg-red-400 text-slate-100 px-20 py-2 rounded disabled:opacity-75"
+                className="button px-20"
                 type="submit"
                 disabled={disabeInputs}
               >
                 Guess
               </button>
             </p>
-            <p className="text-sm text-slate-700 underline decoration-slate-700 decoration-dotted">
+            <p className="link">
               <Link to="/game">Reset</Link>
             </p>
           </Form>

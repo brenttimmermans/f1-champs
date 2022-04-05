@@ -10,7 +10,7 @@ export default function CorrectAnswers({
   hasGameEnded: boolean
 }) {
   return (
-    <ul className="flex flex-col-reverse grow basis-12 overflow-y-auto">
+    <ul className="answers">
       {!hasGameEnded && (
         <CorrectAnswerItem
           key={currentYear}
@@ -41,10 +41,10 @@ const CorrectAnswerItem = ({
   team: string
 }) => {
   return (
-    <li className="flex justify-between items-center border border-slate-200 px-2 py-2 mb-1 shadow shadow-slate-200/50">
-      <span className="text-slate-500 w-20 text-left text-xs">{year}</span>
+    <li>
+      <span className="subtle text-left">{year}</span>
       <span className="grow">{name}</span>
-      <span className="text-slate-500 w-20 text-right text-xs">{team}</span>
+      <span className="subtle text-right">{team}</span>
     </li>
   )
 }

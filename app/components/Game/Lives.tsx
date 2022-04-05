@@ -2,9 +2,9 @@ import { NUMBER_OF_LIVES } from '~/config'
 
 export default function Lives({ lives }: { lives: number }) {
   return (
-    <section className="flex justify-end items text-left text-sm text-slate-500">
+    <section className="lives">
       <div>
-        <p>Lives left</p>
+        <p className="label">Lives left</p>
         <p>
           {new Array(NUMBER_OF_LIVES)
             .fill('❤️', 0, lives)
