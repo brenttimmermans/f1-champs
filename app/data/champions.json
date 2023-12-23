@@ -290,5 +290,9 @@
   "2022": {
     "name": "Max Verstappen",
     "constructor": "Red Bull"
+  },
+  "2023": {
+    "name": "Max Verstappen",
+    "constructor": "Red Bull"
   }
 }
