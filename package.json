@@ -2,7 +2,7 @@
   "name": "f1-champs",
   "version": "0.1.0",
   "description": "Are you a true Formula 1 champion?",
-  "author": "Brent-T <brenttimmermans7@gmail.com>",
+  "author": "brenttimmermans <brenttimmermans7@gmail.com>",
   "license": "ISC",
   "sideEffects": false,
   "scripts": {
