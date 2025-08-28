@@ -5,6 +5,7 @@ node_modules
 /public/build
 .env
 .DS_Store
+.react-router
 
 # tailwind
 */**/tailwind.css
