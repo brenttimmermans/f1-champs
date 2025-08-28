@@ -1,41 +1,35 @@
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from 'remix'
-import type { MetaFunction } from 'remix'
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router'
+import type { MetaFunction } from 'react-router'
 
-import normalize from '~/styles/normalize.css'
-import tailwind from '~/styles/tailwind.css'
-import fonts from '~/styles/fonts.css'
-import styles from '~/styles/styles.css'
+import normalizeUrl from '~/styles/normalize.css?url'
+import tailwindUrl from '~/styles/tailwind.css?url'
+import fontsUrl from '~/styles/fonts.css?url'
+import stylesUrl from '~/styles/styles.css?url'
 
 import Header from '~/components/Header'
 
 export const meta: MetaFunction = () => {
-  return { title: 'F1 Champs' }
+  return [
+    { title: 'F1 Champs' },
+    { name: 'description', content: 'Are you a true Formula 1 champion?' },
+  ]
 }
 
 export const links = () => {
   return [
-    { rel: 'stylesheet', href: normalize },
-    { rel: 'stylesheet', href: tailwind },
-    { rel: 'stylesheet', href: fonts },
-    { rel: 'stylesheet', href: styles },
+    { rel: 'stylesheet', href: normalizeUrl },
+    { rel: 'stylesheet', href: tailwindUrl },
+    { rel: 'stylesheet', href: fontsUrl },
+    { rel: 'stylesheet', href: stylesUrl },
   ]
 }
 
-export default function App() {
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-        <meta name="description" content="Are you a true Formula 1 champion?" />
         <meta property="og:title" content="F1 Champs" />
         <meta
           property="og:description"
@@ -47,8 +41,7 @@ export default function App() {
           property="og:url"
           content="https://f1-champs.brenttimmermans.com"
         />
-        <meta name="theme-color" content="##EF4444" />
-
+        <meta name="theme-color" content="#EF4444" />
         <Meta />
         <Links />
 
@@ -62,18 +55,17 @@ export default function App() {
               })(window,document,'script','dataLayer','GTM-KMB3FR2');
             `,
           }}
-        ></script>
+        />
       </head>
       <body>
         <main className="h-full flex justify-center items-center">
           <article className="game relative h-full flex flex-col max-w-md text-center container mx-auto pt-8 px-8 bg-white shadow-lg">
             <Header />
-            <Outlet />
+            {children}
           </article>
         </main>
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
 
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -83,10 +75,13 @@ export default function App() {
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
-          ></iframe>
+          />
         </noscript>
-        {/* End Google Tag Manager (noscript) */}
       </body>
     </html>
   )
+}
+
+export default function App() {
+  return <Outlet />
 }

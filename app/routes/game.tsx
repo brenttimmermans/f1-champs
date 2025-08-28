@@ -1,13 +1,11 @@
 import {
   Form,
-  json,
-  LoaderFunction,
   useActionData,
   useLoaderData,
   Link,
-  useTransition,
-} from 'remix'
-import type { ActionFunction } from 'remix'
+  useNavigation,
+} from 'react-router'
+import type { ActionFunction, LoaderFunction } from 'react-router'
 import invariant from 'tiny-invariant'
 import { useEffect, useRef } from 'react'
 
@@ -43,23 +41,23 @@ export const action: ActionFunction = async ({ request }) => {
   if (isCorrect) {
     const newCurrentYear = currentYear - 1
     const correctAnswers = await getChampionsSince(newCurrentYear)
-    return json({
+    return {
       ...response,
       currentYear: newCurrentYear,
       correctAnswers: correctAnswers,
-    })
+    }
   }
 
   const correctAnswers = await getChampionsSince(currentYear)
-  return json({
+  return {
     ...response,
     correctAnswers: correctAnswers,
     lives: lives - 1,
-  })
+  }
 }
 
 export const loader: LoaderFunction = async () => {
-  return json(await getAllDrivers())
+  return await getAllDrivers()
 }
 
 export default function Game() {
@@ -75,8 +73,8 @@ export default function Game() {
   const hasGameEnded = parseInt(currentYear) < END_YEAR
   const disabeInputs = isGameOver || hasGameEnded
 
-  const transition = useTransition()
-  const isSubmitting = transition.state === 'submitting'
+  const navigation = useNavigation()
+  const isSubmitting = navigation.state === 'submitting'
 
   const state = determineGameState({ wasCorrect, isGameOver, hasGameEnded })
 
