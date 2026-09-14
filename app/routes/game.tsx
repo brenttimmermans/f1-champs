@@ -1,92 +1,47 @@
-import {
-  Form,
-  useActionData,
-  useLoaderData,
-  Link,
-  useNavigation,
-} from 'react-router'
-import type { ActionFunction, LoaderFunction } from 'react-router'
-import invariant from 'tiny-invariant'
-import { useEffect, useRef } from 'react'
+import { Link } from 'react-router'
+import { useRef } from 'react'
 
-import type { GameData } from '~/types'
-import { getAllDrivers, getChampionByYear, getChampionsSince } from '~/lib/data'
+import { getAllDrivers } from '~/lib/data'
+import { useGame } from '~/hooks/useGame'
 import CorrectAnswers from '~/components/Game/CorrectAnswers'
 import Lives from '~/components/Game/Lives'
 import Status from '~/components/Game/Status'
-import { END_YEAR, NUMBER_OF_LIVES, START_YEAR } from '~/config'
-import { determineGameState } from '~/lib/game-state'
 
-export const action: ActionFunction = async ({ request }) => {
-  const formData = await request.formData()
-
-  const guess = formData.get('guess')
-  const formCurrentYear = formData.get('currentYear')
-  const formLives = formData.get('lives')
-
-  invariant(typeof guess === 'string', 'guess should be a string')
-  invariant(
-    typeof formCurrentYear === 'string',
-    'currentYear should be a string',
-  )
-  invariant(typeof formLives === 'string', 'lives should be a string')
-
-  const currentYear = parseInt(formCurrentYear)
-  const lives = parseInt(formLives)
-
-  const correctDriver = await getChampionByYear(currentYear)
-  const isCorrect = correctDriver?.name === guess
-
-  const response = { guess, wasCorrect: isCorrect, currentYear, lives }
-  if (isCorrect) {
-    const newCurrentYear = currentYear - 1
-    const correctAnswers = await getChampionsSince(newCurrentYear)
-    return {
-      ...response,
-      currentYear: newCurrentYear,
-      correctAnswers: correctAnswers,
-    }
-  }
-
-  const correctAnswers = await getChampionsSince(currentYear)
-  return {
-    ...response,
-    correctAnswers: correctAnswers,
-    lives: lives - 1,
-  }
-}
-
-export const loader: LoaderFunction = async () => {
-  return await getAllDrivers()
-}
+const DRIVER_OPTIONS = getAllDrivers()
 
 export default function Game() {
-  const driverOptions = useLoaderData<string[]>()
-
-  const formData = useActionData<GameData>()
-  const currentYear = formData?.currentYear ?? START_YEAR.toString()
-  const correctAnswers = formData?.correctAnswers ?? {}
-  const lives = formData?.lives ?? NUMBER_OF_LIVES
-
-  const wasCorrect = formData?.wasCorrect
-  const isGameOver = lives === 0
-  const hasGameEnded = parseInt(currentYear) < END_YEAR
-  const disabeInputs = isGameOver || hasGameEnded
-
-  const navigation = useNavigation()
-  const isSubmitting = navigation.state === 'submitting'
-
-  const state = determineGameState({ wasCorrect, isGameOver, hasGameEnded })
+  const {
+    currentYear,
+    lives,
+    isFinished,
+    hasGameEnded,
+    answers,
+    state,
+    guess,
+    reset,
+  } = useGame()
 
   const inputRef = useRef<HTMLInputElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
 
-  useEffect(() => {
-    if (!isSubmitting) {
-      inputRef.current?.focus()
-      formRef.current?.reset()
-    }
-  }, [isSubmitting])
+  const formReset = () => {
+    formRef.current?.reset()
+    inputRef.current?.focus()
+  }
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    if (!inputRef.current) return
+
+    guess(inputRef.current.value)
+    formReset()
+  }
+
+  const handleReset = () => {
+    reset()
+    formReset()
+  }
 
   return (
     <>
@@ -97,14 +52,19 @@ export default function Game() {
       </div>
       <div className="flex flex-col grow space-y-6 ">
         <CorrectAnswers
-          answers={correctAnswers}
-          currentYear={currentYear}
+          answers={answers}
+          currentYear={String(currentYear)}
           hasGameEnded={hasGameEnded}
         />
         <div className="controls">
           <Lives lives={lives} />
           <Status state={state} />
-          <Form method="post" ref={formRef} className="space-y-3">
+          <form
+            method="post"
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="space-y-3"
+          >
             <p className="text-left">
               <label htmlFor="guess" className="label">
                 Your guess:
@@ -114,7 +74,7 @@ export default function Game() {
                 name="guess"
                 id="guess"
                 list="guess-options"
-                disabled={disabeInputs}
+                disabled={isFinished}
                 placeholder="Enter a driver's name"
                 autoFocus
                 required
@@ -122,33 +82,26 @@ export default function Game() {
                 className="input"
               />
               <datalist id="guess-options">
-                {driverOptions.map(driver => (
+                {DRIVER_OPTIONS.map(driver => (
                   <option key={driver} value={driver} />
                 ))}
               </datalist>
-            </p>
-            <p className="hidden">
-              <input
-                type="number"
-                name="currentYear"
-                value={currentYear}
-                readOnly
-              />
-              <input type="number" name="lives" value={lives} readOnly />
             </p>
             <p>
               <button
                 className="button px-20"
                 type="submit"
-                disabled={disabeInputs}
+                disabled={isFinished}
               >
                 Guess
               </button>
             </p>
             <p className="link">
-              <Link to="/game">Reset</Link>
+              <button type="button" onClick={handleReset}>
+                Reset
+              </button>
             </p>
-          </Form>
+          </form>
         </div>
       </div>
     </>
