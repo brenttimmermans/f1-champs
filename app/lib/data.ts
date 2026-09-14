@@ -3,29 +3,20 @@ import type { Driver, DriversList } from '~/types'
 import DRIVERS from '~/data/drivers.json'
 import CHAMPIONS from '~/data/champions.json'
 
-export async function getAllDrivers(): Promise<DriversList> {
-  const drivers = DRIVERS as unknown as DriversList
-  return drivers
+export function getAllDrivers(): string[] {
+  return DRIVERS
 }
 
-export async function getAllChampions(): Promise<DriversList> {
-  const champions = CHAMPIONS as unknown as DriversList
-  return champions
+export function getAllChampions(): DriversList {
+  return CHAMPIONS
 }
 
-export async function getChampionsSince(year: number): Promise<DriversList> {
-  const drivers = await getAllChampions()
-
+export function getChampionsSince(year: number): DriversList {
   return Object.fromEntries(
-    Object.entries(drivers).filter(([key]) => {
-      return parseInt(key) > year
-    }),
+    Object.entries(getAllChampions()).filter(([key]) => parseInt(key) > year),
   )
 }
 
-export async function getChampionByYear(
-  year: number,
-): Promise<Driver | undefined> {
-  const drivers = await getAllChampions()
-  return drivers[year]
+export function getChampionByYear(year: number): Driver | undefined {
+  return getAllChampions()[year]
 }
