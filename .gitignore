@@ -3,6 +3,9 @@ node_modules
 /api
 /build
 /public/build
-.env
+.env*
 .DS_Store
 .react-router
+
+# vercel
+.vercel
