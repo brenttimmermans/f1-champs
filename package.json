@@ -11,19 +11,15 @@
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/tailwind.css",
     "dev": "concurrently \"npm run dev:css\" \"react-router dev\"",
     "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/tailwind.css",
-    "start": "npx @react-router/serve build/server/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "cross-env": "^7.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "^7.0.0",
-    "tiny-invariant": "^1.2.0"
+    "react-router": "^7.0.0"
   },
   "devDependencies": {
     "@react-router/dev": "^7.0.0",
-    "@react-router/serve": "^7.0.0",
     "@types/node": "^24.3.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
