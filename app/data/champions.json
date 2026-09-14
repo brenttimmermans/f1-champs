@@ -294,5 +294,13 @@
   "2023": {
     "name": "Max Verstappen",
     "constructor": "Red Bull"
+  },
+  "2024": {
+    "name": "Max Verstappen",
+    "constructor": "Red Bull"
+  },
+  "2025": {
+    "name": "Lando Norris",
+    "constructor": "McLaren"
   }
 }
