@@ -5,14 +5,6 @@ export type Driver = {
 
 export type DriversList = Record<string, Driver>
 
-export type GameData = {
-  guess: string
-  wasCorrect: boolean
-  currentYear: string
-  correctAnswers: DriversList
-  lives: number
-}
-
 export interface IGameStateParams {
   wasCorrect: boolean | undefined
   isGameOver: boolean | undefined
