@@ -6,6 +6,3 @@ node_modules
 .env
 .DS_Store
 .react-router
-
-# tailwind
-*/**/tailwind.css

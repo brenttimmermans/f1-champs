@@ -2,7 +2,7 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router'
 import type { MetaFunction } from 'react-router'
 
 import normalizeUrl from '~/styles/normalize.css?url'
-import tailwindUrl from '~/styles/tailwind.css?url'
+import appUrl from '~/styles/app.css?url'
 import fontsUrl from '~/styles/fonts.css?url'
 import stylesUrl from '~/styles/styles.css?url'
 
@@ -18,7 +18,7 @@ export const meta: MetaFunction = () => {
 export const links = () => {
   return [
     { rel: 'stylesheet', href: normalizeUrl },
-    { rel: 'stylesheet', href: tailwindUrl },
+    { rel: 'stylesheet', href: appUrl },
     { rel: 'stylesheet', href: fontsUrl },
     { rel: 'stylesheet', href: stylesUrl },
   ]
