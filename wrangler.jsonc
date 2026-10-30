@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "f1-champs",
+  "compatibility_date": "2026-10-30",
+  "assets": {
+    "directory": "./build/client",
+    // Unknown paths get the home page, like the old Vercel deploy.
+    "not_found_handling": "single-page-application",
+    // Serve /game, not /game/, which is what the app links to.
+    "html_handling": "drop-trailing-slash"
+  }
+}
