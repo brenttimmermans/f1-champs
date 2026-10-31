@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "f1-champs",
+  "compatibility_date": "2026-10-30",
+  "assets": {
+    "directory": "./build/client",
+    "not_found_handling": "single-page-application",
+    "html_handling": "drop-trailing-slash"
+  }
+}
