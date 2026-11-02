@@ -1,26 +1,24 @@
-import { ServerRouter } from 'react-router'
+import { ServerRouter, type EntryContext } from 'react-router'
 import { renderToPipeableStream } from 'react-dom/server'
-import { PassThrough } from 'stream'
+import { PassThrough, Readable } from 'stream'
 
 export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
-  routerContext: any,
+  routerContext: EntryContext,
 ) {
   return new Promise((resolve, reject) => {
-    let shellRendered = false
     const { pipe, abort } = renderToPipeableStream(
       <ServerRouter context={routerContext} url={request.url} />,
       {
         onShellReady() {
-          shellRendered = true
           const body = new PassThrough()
 
           responseHeaders.set('Content-Type', 'text/html')
 
           resolve(
-            new Response(body as any, {
+            new Response(Readable.toWeb(body) as ReadableStream, {
               headers: responseHeaders,
               status: responseStatusCode,
             }),
